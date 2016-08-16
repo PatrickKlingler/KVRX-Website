@@ -40,7 +40,7 @@ class Show(models.Model):
 
 class Playlist(models.Model):
 	show = models.ForeignKey('Show')
-	date = models.DateField(auto_now_add=True, verbose_name='Playlist date')
+	date = models.DateField(auto_now_add=False, verbose_name='Playlist date')
 	description = models.TextField(verbose_name='Playlist description')
 	songs = models.ManyToManyField('Song', blank=True, verbose_name='Songs')
 	def __unicode__(self):
