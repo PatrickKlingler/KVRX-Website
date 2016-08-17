@@ -16,6 +16,7 @@ A KVRX website redesign using Django. Check out [the wiki](https://github.com/ia
 
 Mac instructions
 
+0. `git pull` !!!!
 1. Navigate to the project directory in terminal `$ cd Downloads/KVRX-Website/`
 2. Install the requirements `$ pip install -r requirements.txt` (or `$ sudo pip install -r requirements.txt`)
 3. Run `$ python manage.py runserver`
