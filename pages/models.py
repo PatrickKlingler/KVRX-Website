@@ -11,7 +11,7 @@ def validate_url(url):
 		'login',
 	]
 	if str(url).lower() in RESTRICTED_URLS:
-		raise ValidationError('Urls starting with {} are not allowed'.format(url))
+		raise ValidationError('The URL "{}" is already a custom page.'.format(url))
 
 # Create your models here.
 class Page(models.Model):
