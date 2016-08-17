@@ -25,13 +25,13 @@
 				<!--NAVBAR LEFT-->
 				<ul class="nav navbar-nav">
 					<li>
-						<a id="song" href="#">Garden</a>
+						<a id="song" href="#">{{ currentTrack.title }}</a>
 					</li>
 					<li>
-						<a id="artist" href="#">Hinds</a>
+						<a id="artist" href="#">{{ currentTrack.artist }}</a>
 					</li>
 					<li>
-						<a id="album" href="#"><i><u>Leave Me Alone</u></i></a>
+						<a id="album" href="#"><i><u>{{ currentTrack.album }}</u></i></a>
 					</li>
 					<li id="buttonholder">
 						<a onclick="play()"><span class="glyphicon glyphicon-play"></span></a>
@@ -60,7 +60,6 @@
 	<div id="main">
 		<!--NAV-->
 		<ul class="nav nav-tabs" id="body-nav">
-
 			{% for i in p %}{% if i.showOnHomepage %}
 				<li>
 					<a href="{% url 'pages_custom_page' p=i.pageURL %}">{{i.pageTitle}}</a>

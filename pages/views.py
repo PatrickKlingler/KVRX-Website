@@ -9,9 +9,10 @@ from shows.models import Deejay, Show, Playlist, Song
 #FUCK YEAH I DID IT
 def getBaseInfo(request):
 	allPages = Page.objects.all()
+	currentTrack = Song.objects.get(currentTrack=True)
 	primaryPages = allPages[:5]
 	secondaryPages = allPages[5:]
-	return {'p':primaryPages, 'p2':secondaryPages}
+	return {'p':primaryPages, 'p2':secondaryPages, 'currentTrack':currentTrack}
 
 # Create your views here.
 
