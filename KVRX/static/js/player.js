@@ -12,7 +12,7 @@ class KVRXPlayer {
 		console.log("Adding player source");
 		var source1 = document.createElement('source');
 		source1.type = 'audio/mpeg';
-		source1.src = 'https://tstv-stream.tsm.utexas.edu:8000/kvrx_livestream';
+		source1.src = 'http://tstv-stream.tsm.utexas.edu:8000/kvrx_livestream';
 		this.audioElement.appendChild(source1);
 		
 		//Load the player

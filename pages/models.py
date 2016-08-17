@@ -9,6 +9,7 @@ def validate_url(url):
 		'base',
 		'shows',
 		'login',
+		'admin',
 	]
 	if str(url).lower() in RESTRICTED_URLS:
 		raise ValidationError('The URL "{}" is already a custom page.'.format(url))
