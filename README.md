@@ -1,8 +1,8 @@
-# KVRX Django Website
+# KVRX Website
 
-A KVRX website redesign using Django. Check out [the wiki](https://github.com/ianmobbs/KVRX-Website/wiki) for a full list of features implemented and features to come, and see [issues](https://github.com/ianmobbs/KVRX-Website/issues) to look at our to-do list!
+A KVRX website redesign using Django. Check out [the wiki](https://github.com/ianmobbs/KVRX-Website/wiki) for a full list of features implemented and features to come, and see [issues](https://github.com/ianmobbs/KVRX-Website/issues) to look at our to-do list!s
 
-## Main Features
+## Current Features
 
 - Create users and grant/revoke certain permissions
 - Groups (such as 'Deejay' or 'Staff') automatically grant specific permissions to users in those groups

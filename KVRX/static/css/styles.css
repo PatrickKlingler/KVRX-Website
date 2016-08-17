@@ -1,9 +1,10 @@
 body {
-	background-color: #90C1AD;
+	background-color: #BBBBBB;
 }
 
 a {
-	color: #A99A7C;
+	color: #747474;
+	/*font-weight: bold;*/
 }
 
 /*
@@ -14,17 +15,17 @@ margin-right: auto;
 }*/
 
 .panel-default > .panel-heading {
-  background-color: #E7EE22;
+  background-color: #EFF0F1;
 }
 
 #main {
-	margin-top: 64.18px;
-	margin-left: 10%;
-	margin-right: 10%;
-	background-color: #fff;
+	margin-left: 5%;
+	margin-right: 5%;
+	background-color: #ffffff;
 	padding-bottom: 25px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
+
 #body-nav {
 	margin-left: 25%;
 	margin-right: 25%;
@@ -33,6 +34,7 @@ margin-right: auto;
 	display:block;
     margin:auto;
 }
+
 .glyphicon {
     font-size: 20px;
 }
