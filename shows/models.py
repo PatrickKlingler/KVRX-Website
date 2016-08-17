@@ -6,7 +6,7 @@ from django.db import models
 
 class Deejay(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	dj = models.CharField(max_length=50, verbose_name='DJ Name')
+	dj = models.CharField(max_length=50, verbose_name='DJ Name', unique=True)
 	pic = models.ImageField(blank=True, null=True)
 	role = models.CharField(max_length=50, verbose_name='Job title', default="DJ")
 	bio = models.TextField(verbose_name='Bio')
