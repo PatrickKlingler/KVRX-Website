@@ -1,15 +1,222 @@
 {% extends 'pages/card.html' %}
 {% block card_title %}Shows{% endblock %}
 {% block card_content %}
-
+{% load schedule %}
 <h4>DJs and Shows</h4>
+
+<div id="schedule">
+<table align="center">
+  <tr>
+    <th></th>
+    <th id="Sunday">Sunday</th>
+    <th id="Monday">Monday</th>
+    <th id="Tuesday">Tuesday</th>
+    <th id="Wednesday">Wednesday</th>
+    <th id="Thursday">Thursday</th>
+    <th id="Friday">Friday</th>
+    <th id="Saturday">Saturday</th>
+  </tr>
+  <tr>
+    <td>12:00 AM</td>
+    {{"00:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>12:30 AM</td>
+    {{"00:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>1:00 AM</td>
+    {{"01:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>1:30 AM</td>
+    {{"01:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>2:00 AM</td>
+    {{"02:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+  	<td>2:30 AM</td>
+    {{"02:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>3:00 AM</td>
+    {{"03:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>3:30 AM</td>
+    {{"03:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>4:00 AM</td>
+    {{"04:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>4:30 AM</td>
+    {{"04:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>5:00 AM</td>
+    {{"05:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>5:30 AM</td>
+    {{"05:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>6:00 AM</td>
+    {{"06:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>6:30 AM</td>
+    {{"06:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>7:00 AM</td>
+    {{"07:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>7:30 AM</td>
+    {{"07:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>8:00 AM</td>
+    {{"08:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>8:30 AM</td>
+    {{"08:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>9:00 AM</td>
+    {{"09:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>9:30 AM</td>
+    {{"09:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>10:00 AM</td>
+	{{"10:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>10:30 AM</td>
+    {{"10:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>11:00 AM</td>
+    {{"11:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>11:30 AM</td>
+    {{"11:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>12:00 PM</td>
+    {{"12:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>12:30 PM</td>
+    {{"12:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>1:00 PM</td>
+    {{"13:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>1:30 PM</td>
+    {{"13:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>2:00 PM</td>
+    {{"14:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>2:30 PM</td>
+    {{"14:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>3:00 PM</td>
+    {{"15:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>3:30 PM</td>
+    {{"15:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>4:00 PM</td>
+    {{"16:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>4:30 PM</td>
+    {{"16:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>5:00 PM</td>
+    {{"17:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>5:30 PM</td>
+    {{"17:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>6:00 PM</td>
+    {{"18:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>6:30 PM</td>
+    {{"18:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>7:00 PM</td>
+    {{"19:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>7:30 PM</td>
+    {{"19:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>8:00 PM</td>
+    {{"20:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>8:30 PM</td>
+    {{"20:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>9:00 PM</td>
+    {{"21:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>9:30 PM</td>
+    {{"21:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>10:00 PM</td>
+    {{"22:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>10:30 PM</td>
+    {{"22:30:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>11:00 PM</td>
+    {{"23:00:00"|populate_hour|safe}}
+  </tr>
+  <tr>
+    <td>11:30 PM</td>
+    {{"23:30:00"|populate_hour|safe}}
+  </tr>
+</table>
+</div>
 <ul>
 {% for deejay in djs %}
 	<a href="{% url 'dj_detail' dj_name=deejay.dj %}"<li>{{deejay.dj}}</li></a>
 	<ul>
 	{% for show in shows %}
 	{% if show.dj.id == deejay.id %}
-		<a href="{% url 'show_detail' show_name=show.show_name %}"><li>{{show.show_name}}</li></a>
+		<a href="{% url 'show_detail' show_name=show.show_name %}"><li>{{show.show_name}} - {{show.get_duration}} - {{show.start_time}}</li></a>
 	{% endif %}
 	{% endfor %}
 	</ul>

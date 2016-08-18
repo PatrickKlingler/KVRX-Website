@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
-
+from datetime import datetime
 # Create your models here.
 
 class Deejay(models.Model):
@@ -37,6 +37,21 @@ class Show(models.Model):
 	description = models.TextField(verbose_name='Show description')
 	def __unicode__(self):
 		return "%s - %s" % (self.show_name, self.dj.dj)
+	def get_day_num(self):
+		days = {
+			"SU":0,
+			"M":1,
+			"T":2,
+			"W":3,
+			"TH":4,
+			"F":5,
+			"SA":6,
+		}
+		return days[self.show_date]
+	def get_duration(self):
+		return (datetime.combine(datetime(1,1,1,0,0,0), self.end_time) - datetime.combine(datetime(1,1,1,0,0,0), self.start_time)).total_seconds() / 3600
+	def get_start_time_string(self):
+		return str(self.start_time)
 
 class Playlist(models.Model):
 	show = models.ForeignKey('Show')
