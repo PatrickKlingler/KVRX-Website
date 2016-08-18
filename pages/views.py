@@ -4,9 +4,8 @@ from shows.models import Deejay, Show, Playlist, Song
 
 # Page rendering methods here
 
-#THIS IS A CONTEXT PROCESSOR
-#DOCUMENTATION INCOMING
-#FUCK YEAH I DID IT
+# This is a context processor
+# Anything you put in it will be passed to ALL templates upon rendering (sort of a "master context")
 def get_base_info(request):
 	all_pages = Page.objects.filter(show_on_homepage=True)
 	curr_track = Song.objects.get(current_track=True)
@@ -14,20 +13,27 @@ def get_base_info(request):
 	secondary_pages = all_pages[5:]
 	return {'p':primary_pages, 'p2':secondary_pages, 'curr_track':curr_track}
 
-# Create your views here.
+# Views here
 
-def base(request):
-	return render(request, 'pages/base.html', {})
+# Index
 
 def index(request):
 	return render(request, 'pages/index.html', {})
 
-def custom_page(request, page):
-	user_page = get_object_or_404(Page, page_url=page)
-	return render(request, 'pages/details/page_detail.html', {'content': user_page})
+# Hardcoded pages
+
+def base(request):
+	return render(request, 'pages/base.html', {})
+
+def shows(request):
+	djs = Deejay.objects.all()
+	shows = Show.objects.all()
+	return render(request, 'pages/show_list.html', {'djs':djs, 'shows':shows})
 
 def login(request):
 	return render(request, 'pages/login.html', {})
+
+# Keyword pages
 
 def dj_detail(request, dj_name):
 	dj_object = get_object_or_404(Deejay.objects.filter(dj__iexact=dj_name))
@@ -39,7 +45,13 @@ def show_detail(request, show_name):
 	playlists = Playlist.objects.filter(show=show_object)
 	return render(request, 'pages/details/show_detail.html', {'show':show_object, 'playlists':playlists})
 
-def shows(request):
-	djs = Deejay.objects.all()
-	shows = Show.objects.all()
-	return render(request, 'pages/show_list.html', {'djs':djs, 'shows':shows})
+# User created pages
+
+def custom_page(request, page):
+	user_page = get_object_or_404(Page, page_url=page)
+	return render(request, 'pages/details/page_detail.html', {'content': user_page})
+
+
+
+
+
