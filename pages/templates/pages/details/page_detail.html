@@ -1,15 +1,4 @@
-{% extends 'pages/base.html' %}
-{% block content %}
-<div class="row">
-	<div class="row">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">{{ content.pageTitle }}</h3>
-			</div>
-			<div class="panel-body">
-				<p>{{ content.pageContent|safe }}</p>
-			</div>
-		</div>
-	</div>
-</div>
-{% endblock %}
+{% extends 'pages/card.html' %}
+
+{% block card_title %}{{content.page_title}}{% endblock %}
+{% block card_content %}{{content.page_content|safe}}{% endblock %}

@@ -20,16 +20,16 @@ from . import views
 
 urlpatterns = [
     #Index
-    url(r'^$', views.index, name="pages_index"),
+    url(r'^$', views.index, name="index"),
     #Hardcoded pages
-    url(r'^base', views.base, name="pages_base"), #REMOVE IN PRODUCTION
-    url(r'^shows', views.shows, name="pages_shows_index"),
-    url(r'^login', views.login, name="pages_login"),
+    url(r'^base', views.base, name="base"), #REMOVE IN PRODUCTION
+    url(r'^shows', views.shows, name="shows"),
+    url(r'^login', views.login, name="login"),
     #Keyword pages
-    url(r'^dj/(?P<djName>.+)/$', views.dj_detail, name="pages_dj_detail"),
-    url(r'^show/(?P<namegiven>.+)/$', views.show_detail, name="pages_show_detail"),
+    url(r'^dj/(?P<dj_name>.+)/$', views.dj_detail, name="dj_detail"),
+    url(r'^show/(?P<show_name>.+)/$', views.show_detail, name="show_detail"),
     #User created pages (CMS)
-    url(r'^(?P<p>.+)/$', views.custom_page, name="pages_custom_page"),
+    url(r'^(?P<page>.+)/$', views.custom_page, name="custom_page"),
 ]
 
 admin.site.site_header = 'KVRX Admin'

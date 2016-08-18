@@ -1,4 +1,9 @@
 {% extends 'pages/base.html' %}
+{% block head %}
+	<meta name="author" content="KVRX">
+	<meta name="keywords" content="kvrx, 91.7 kvrx, kvrx austin, student radio, college radio, independent radio">
+	<meta name="description" content="91.7 KVRX Austin - Your independent music authority.">
+{% endblock %}
 {% block content %}
 <div class="row">
 	<div class="row">
@@ -13,7 +18,7 @@
 						"http://cdn4.pitchfork.com/albums/22646/21b15074.jpg">
 						<div class="caption">
 							<h4>Now Playing</h4>
-							<p>{{currentTrack.title}} - {{currentTrack.artist}} - <u><i>{{currentTrack.album}}</i></u></p>
+							<p>{{curr_track.title}} - {{curr_track.artist}} - <u><i>{{curr_track.album}}</i></u></p>
 						</div>
 					</div>
 				</div>

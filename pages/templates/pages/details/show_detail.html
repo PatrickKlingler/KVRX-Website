@@ -1,27 +1,20 @@
-{% extends 'pages/base.html' %}
+{% extends 'pages/card.html' %}
 
-{% block content %}
-<div class="row">
-	<div class="row">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				<h3 class="panel-title">{{show.showname}}</h3>
-			</div>
-			<div class="panel-body">
-				<h4>{{show.showname}}</h4>
-				<h5><a href="{% url 'pages_dj_detail' djName=show.dj.dj %}">DJ {{show.dj.dj}}</a></h5>
-				<p>{{show.description}}</p>
-				<hr>
-				{% for playlist in playlists %}
-				<h5>{{playlist.date|date:"l, F d, o"}}</h5>
-				<ul>
-				{% for song in playlist.songs.all %}
-					<li>{{song.title}} - {{song.artist}} on {{song.album}}</li>
-				{% endfor %}
-				</ul>
-				{% endfor %}
-			</div>
-		</div>
-	</div>
-</div>
+{% block card_title %}
+	{{show.show_name}}
+{% endblock %}
+
+{% block card_content %}
+	<h4>{{show.show_name}}</h4>
+	<h5><a href="{% url 'dj_detail' dj_name=show.dj.dj %}">{{show.dj.dj}}</a></h5>
+	<p>{{show.description}}</p>
+	<hr>
+	{% for playlist in playlists %}
+		<h5>{{playlist.date|date:"l, F d, o"}}</h5>
+		<ul>
+		{% for song in playlist.songs.all %}
+			<li>{{song.title}} - {{song.artist}} on {{song.album}}</li>
+		{% endfor %}
+		</ul>
+	{% endfor %}
 {% endblock %}
