@@ -5,7 +5,7 @@ from django.db import models
 # Create your models here.
 
 class Deejay(models.Model):
-	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
 	dj = models.CharField(max_length=50, verbose_name='DJ Name', unique=True)
 	pic = models.ImageField(blank=True, null=True)
 	role = models.CharField(max_length=50, verbose_name='Job title', default="DJ")
@@ -36,7 +36,7 @@ class Show(models.Model):
 	end_time = models.TimeField(auto_now=False, verbose_name='End time')
 	description = models.TextField(verbose_name='Show description')
 	def __unicode__(self):
-		return "%s - %s" % (self.showname, self.dj.dj)
+		return "%s - %s" % (self.show_name, self.dj.dj)
 
 class Playlist(models.Model):
 	show = models.ForeignKey('Show')
@@ -44,7 +44,7 @@ class Playlist(models.Model):
 	description = models.TextField(verbose_name='Playlist description')
 	songs = models.ManyToManyField('Song', blank=True, verbose_name='Songs')
 	def __unicode__(self):
-		return "%s - %s" % (self.show.showname, str(self.date))
+		return "%s - %s" % (self.show.show_name, str(self.date))
 
 class Song(models.Model):
 	album_ID = models.CharField(max_length=50, null=True, blank=True, verbose_name='Album ID')
